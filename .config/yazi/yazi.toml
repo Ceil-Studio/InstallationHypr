@@ -1,0 +1,33 @@
+[mgr]
+show_hidden = true
+
+[opener]
+edit = [
+    { run = 'vim %s', block = true, desc = "Vim" }
+]
+kate = [
+    { run = 'kate %s', orphan = true, desc = "Kate" }
+]
+gimp = [
+    { run = 'gimp %s', orphan = true, desc = "GIMP" }
+]
+chromium = [
+    { run = 'chromium %s', orphan = true, desc = "Chromium" }
+]
+
+[open]
+rules = [
+
+    # Fichiers texte et scripts
+    { mime = "text/*", use = [ "edit", "kate", "reveal" ] },
+    { mime = "application/json", use = [ "edit", "kate", "reveal" ] },
+    { mime = "application/x-shellscript", use = [ "edit", "kate", "reveal" ] },
+    { mime = "text/x-lua", use = [ "edit", "kate", "reveal" ] },
+    { mime = "application/x-lua", use = [ "edit", "kate", "reveal" ] },
+
+    # Images
+    { mime = "image/*", use = [ "gimp", "reveal" ] },
+
+    # Vidéos
+    { mime = "video/*", use = [ "chromium", "reveal" ] }
+]

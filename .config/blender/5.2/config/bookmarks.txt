@@ -1,0 +1,17 @@
+[Bookmarks]
+/home/arch/script_blender/
+/home/arch/projet-perso/
+/home/arch/commande/
+/home/arch/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/male4/
+[Recent]
+/home/arch/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/male4/
+/home/arch/commande/bruce/
+!Downloads
+/home/arch/Téléchargements/
+/home/arch/commande/layer/drapeau/decompile/compiled 0.74/materials/models/ceil_mdl/layer/drapeau/
+/home/arch/script_blender/shader asset/
+/home/arch/Documents/
+/tmp/
+/home/arch/commande/layer/drapeau/decompile/compiled 0.74/materials/models/ceil_pm/layer/drapeau/
+/home/arch/script_blender/
+/home/arch/commande/layer/drapeau/decompile/

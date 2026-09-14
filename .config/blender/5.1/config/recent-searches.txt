@@ -1,0 +1,85 @@
+   body_normal.png
+Node ▸ Swap (Shift S) ▸ Displacement ▸ Bump
+L0 Texture|[essentials_brushes-mesh_texture.blend]
+   body
+   chocolat
+   black
+Add (Shift A) ▸ Input ▸ Ambient Occlusion
+Add (Shift A) ▸ Utilities ▸ Math ▸ Map Range
+Add (Shift A) ▸ Input ▸ Texture Coordinate
+L0 Texture.001|[essentials_brushes-mesh_texture.blend]
+L  Texture|[essentials_brushes-mesh_texture.blend]
+Add (Shift A) ▸ Input ▸ Bevel
+Add (Shift A) ▸ Utilities ▸ Vector ▸ Vector Math ▸ Dot Product
+Add (Shift A) ▸ Input ▸ Geometry
+   sucre.png
+   lait.jpg
+   beurre.jpeg
+beurre
+lait
+sucre
+   beurre_basecolor
+   cuisiniere
+ 0 beurre.jpeg
+  cacao
+   cacao.png
+  cuisiniere
+  frigo
+  Scene
+  moule
+Mesh ▸ Convex Hull
+  sucre
+  lait
+  beurre
+  casserole
+  chocolat
+Chest-Local
+L_Wing3-Local
+ear_L-Global
+Detail8-1-Local
+Hip-Global
+  Idle 01
+  Walk 01
+Detail8-2-Local
+  Run 01
+  Landing 01
+  Attack 01
+Mini4-1-Global
+  Eat 01
+  Flying 01
+Add (Shift A) ▸ Input ▸ Geometry ▸ Normal
+Mesh ▸ Merge (M) ▸ At Last
+Move to Collection ▸ New Collection
+ 0 normal
+   Untitled
+   Overall_high
+   normal.001
+Add (Shift A) ▸ Displacement ▸ Normal Map
+   cage
+Mesh ▸ Merge (M) ▸ At Center
+Face (Ctrl F) ▸ Grid Fill
+   grid
+   side.png
+   shoes
+Node ▸ Swap (Shift S) ▸ Input ▸ Color
+   eye.png
+spine.006
+F metarig.py
+   corp_normal
+Add (Shift A) ▸ Color ▸ Mix Color
+Add (Shift A) ▸ Color ▸ Color Ramp
+Add (Shift A) ▸ Displacement ▸ Bump
+Add (Shift A) ▸ Input ▸ Value
+
+Add (Shift A) ▸ Utilities ▸ Vector ▸ Vector Math ▸ Reflect
+   right.png
+   left.png
+ 0 c85aa904-1160-4f5f-8bec-5ef070f10a8b_rendered.webp
+   c85aa904-1160-4f5f-8bec-5ef070f10a8b_rendered.webp.001
+   face.png
+   back.png
+ 0 back.png.001
+ 0 test.png
+Nose_Length
+Add (Shift A) ▸ Texture ▸ Image Texture
+   Face.png

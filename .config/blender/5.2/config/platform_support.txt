@@ -1,0 +1,11 @@
+{NVIDIA Corporation/NVIDIA GeForce RTX 3050 Laptop GPU/PCIe/SSE2/4.6.0 NVIDIA 595.71.05}=SUPPORTED
+{NVIDIA Corporation/NVIDIA GeForce RTX 3050 Laptop GPU/NVIDIA 595.71.05}=SUPPORTED
+{Intel Corporation/Intel(R) UHD Graphics (TGL GT1)/Intel open-source Mesa driver Mesa 26.0.6-arch1.1}=SUPPORTED
+{Intel/Mesa Intel(R) UHD Graphics (TGL GT1)/4.6 (Core Profile) Mesa 26.1.1-arch1.2}=SUPPORTED
+{NVIDIA Corporation/NVIDIA GeForce RTX 3050 Laptop GPU/PCIe/SSE2/4.6.0 NVIDIA 610.43.02}=SUPPORTED
+{NVIDIA Corporation/NVIDIA GeForce RTX 3050 Laptop GPU/PCIe/SSE2/4.6.0 NVIDIA 610.43.03}=SUPPORTED
+{Intel/Mesa Intel(R) UHD Graphics (TGL GT1)/4.6 (Core Profile) Mesa 26.1.4-arch1.1}=SUPPORTED
+{NVIDIA Corporation/NVIDIA GeForce RTX 3080 Ti Laptop GPU/PCIe/SSE2/4.6.0 NVIDIA 610.43.03}=SUPPORTED
+{NVIDIA Corporation/NVIDIA GeForce RTX 3080 Ti Laptop GPU/PCIe/SSE2/4.6.0 NVIDIA 610.57.04}=SUPPORTED
+{Intel/Mesa Intel(R) Iris(R) Xe Graphics (ADL GT2)/4.6 (Core Profile) Mesa 26.2.2-arch1.1}=SUPPORTED
+{NVIDIA Corporation/NVIDIA GeForce RTX 3080 Ti Laptop GPU/PCIe/SSE2/4.6.0 NVIDIA 615.71.09}=SUPPORTED

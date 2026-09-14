@@ -1,0 +1,203 @@
+* {
+border: none;
+border-radius: 0;
+font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", sans-serif;
+font-size: 14px;
+min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.9);
+    color: #cdd6f4;
+    border-bottom: 2px solid #313244;
+}
+
+tooltip {
+    background: #1e1e2e;
+    border: 1px solid #313244;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: #cdd6f4;
+}
+
+#custom-ws1,
+#custom-ws2,
+#custom-ws3,
+#custom-ws4,
+#custom-ws5,
+#custom-ws6,
+#custom-ws7,
+#custom-ws8,
+#custom-ws9,
+#custom-ws10 {
+padding: 0 10px;
+margin: 4px 2px;
+border-radius: 6px;
+background-color: #313244;
+color: #a6adc8;
+transition: all 0.2s ease;
+}
+
+#custom-ws1:hover,
+#custom-ws2:hover,
+#custom-ws3:hover,
+#custom-ws4:hover,
+#custom-ws5:hover,
+#custom-ws6:hover,
+#custom-ws7:hover,
+#custom-ws8:hover,
+#custom-ws9:hover,
+#custom-ws10:hover {
+background: #45475a;
+color: #89b4fa;
+}
+
+/* Mise en évidence du workspace actif depuis le script bash */
+#custom-ws1.active,
+#custom-ws2.active,
+#custom-ws3.active,
+#custom-ws4.active,
+#custom-ws5.active,
+#custom-ws6.active,
+#custom-ws7.active,
+#custom-ws8.active,
+#custom-ws9.active,
+#custom-ws10.active {
+background-color: #89b4fa;
+color: #1e1e2e;
+font-weight: bold;
+}
+
+#window,
+#mpris,
+#pulseaudio,
+#backlight,
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#power-profiles-daemon,
+#clock,
+#tray {
+padding: 0 12px;
+margin: 4px;
+border-radius: 6px;
+background-color: #313244;
+color: #cdd6f4;
+}
+
+#mpris {
+color: #a6e3a1;
+}
+
+#mpris.paused {
+color: #bac2de;
+}
+
+#cpu {
+color: #f9e2af;
+}
+
+#memory {
+color: #fab387;
+}
+
+#temperature {
+color: #eba0ac;
+}
+
+#temperature.critical {
+color: #1e1e2e;
+background-color: #f38ba8;
+animation-name: blink;
+animation-duration: 0.5s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+#battery {
+color: #a6e3a1;
+}
+
+#battery.warning {
+color: #f9e2af;
+}
+
+#battery.critical {
+color: #1e1e2e;
+background-color: #f38ba8;
+animation-name: blink;
+animation-duration: 0.5s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #f38ba8;
+        color: #1e1e2e;
+    }
+}
+
+#battery.charging, #battery.plugged {
+color: #94e2d5;
+}
+
+#backlight {
+color: #f9e2af;
+}
+
+#power-profiles-daemon {
+padding: 0 16px;
+}
+
+#power-profiles-daemon.performance {
+color: #f38ba8;
+}
+
+#power-profiles-daemon.balanced {
+color: #89b4fa;
+}
+
+#power-profiles-daemon.power-saver {
+color: #a6e3a1;
+}
+
+#pulseaudio {
+color: #89dceb;
+}
+
+#pulseaudio.muted {
+color: #f38ba8;
+}
+
+#network.disconnected {
+color: #f38ba8;
+}
+
+#bluetooth {
+color: #89b4fa;
+}
+
+#bluetooth.connected {
+color: #a6e3a1;
+}
+
+#bluetooth.disconnected {
+color: #a6adc8;
+}
+
+#clock {
+color: #cba6f7;
+font-weight: bold;
+}
+
+#tray {
+background-color: transparent;
+}

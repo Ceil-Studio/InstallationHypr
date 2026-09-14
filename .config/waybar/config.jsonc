@@ -1,0 +1,220 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+    "exclusive": true,
+    "modules-left": [
+        "group/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "mpris"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "network",
+        "bluetooth",
+        "cpu",
+        "memory",
+        "temperature",
+        "battery",
+        "power-profiles-daemon",
+        "clock",
+        "tray"
+    ],
+    "group/workspaces": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/ws1",
+            "custom/ws2",
+            "custom/ws3",
+            "custom/ws4",
+            "custom/ws5",
+            "custom/ws6",
+            "custom/ws7",
+            "custom/ws8",
+            "custom/ws9",
+            "custom/ws10"
+        ]
+    },
+    "custom/ws1": {
+        "format": "{}",
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=1})'",
+        "exec": "~/.config/waybar/ws_state.sh 1 ",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 10
+    },
+    "custom/ws2": {
+        "format": "{}",
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=2})'",
+        "exec": "~/.config/waybar/ws_state.sh 2 ",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 10
+    },
+    "custom/ws3": {
+        "format": "{}",
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=3})'",
+        "exec": "~/.config/waybar/ws_state.sh 3 ",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 10
+    },
+    "custom/ws4": {
+        "format": "{}",
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=4})'",
+        "exec": "~/.config/waybar/ws_state.sh 4 ",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 10
+    },
+    "custom/ws5": {
+        "format": "{}",
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=5})'",
+        "exec": "~/.config/waybar/ws_state.sh 5 ",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 10
+    },
+    "custom/ws6": {
+        "format": "{}",
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=6})'",
+        "exec": "~/.config/waybar/ws_state.sh 6 ",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 10
+    },
+    "custom/ws7": {
+        "format": "{}",
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=7})'",
+        "exec": "~/.config/waybar/ws_state.sh 7 ",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 10
+    },
+    "custom/ws8": {
+        "format": "{}",
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=8})'",
+        "exec": "~/.config/waybar/ws_state.sh 8 ",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 10
+    },
+    "custom/ws9": {
+        "format": "{}",
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=9})'",
+        "exec": "~/.config/waybar/ws_state.sh 9 ",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 10
+    },
+    "custom/ws10": {
+        "format": "{}",
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=10})'",
+        "exec": "~/.config/waybar/ws_state.sh 10 ",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 10
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 50,
+        "rewrite": {
+            "(.*) - NVIM": " $1",
+            "(.*) - Blender": " $1",
+            "(.*) - Garry's Mod": " $1"
+        }
+    },
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "▶",
+            "spotify": "",
+            "mpd": ""
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
+        "max-length": 45
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ipaddr}/{cidr}",
+        "format-disconnected": "⚠ Disconnected",
+        "tooltip-format": "{ifname} via {gwaddr}"
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connecté(s)",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connecté(s)\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "kitty -e bluetoothctl"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Profil: {profile}\nPilote: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    }
+}

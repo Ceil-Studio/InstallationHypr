@@ -1,0 +1,13 @@
+[Bookmarks]
+/home/arch/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/breen/
+[Recent]
+/home/arch/commande/kali/
+/home/arch/script_blender/
+/home/arch/commande/kali/faces/
+/home/arch/commande/kali/faces/tex/
+/home/arch/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/breen/decompiled 0.74/
+/home/arch/commande/bipedbot/
+/home/arch/commande/bipedbot/Collection 1/
+/home/arch/blender_perso/goblin/test/
+/home/arch/blender_perso/goblin/
+/home/arch/blender/

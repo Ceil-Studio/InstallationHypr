@@ -1,0 +1,25 @@
+2026-06-22 15:22:03,689 - tripo_addon - INFO - BlenderMCP server started on localhost:9876
+2026-06-22 15:22:09,360 - tripo_addon - INFO - BlenderMCP server stopped
+2026-06-22 15:22:13,366 - tripo_addon - INFO - BlenderMCP server started on localhost:9876
+2026-06-22 15:23:07,389 - tripo_addon - INFO - BlenderMCP server stopped
+2026-06-22 15:25:11,138 - tripo_addon - ERROR - Error in receive_one: [TASK_BANNED] Task banned
+2026-06-22 15:25:11,336 - tripo_addon - ERROR - Error downloading model: [TASK_BANNED] Task banned
+2026-06-22 15:25:58,113 - tripo_addon - INFO - BlenderMCP server started on localhost:9876
+2026-06-22 15:25:59,930 - tripo_addon - INFO - BlenderMCP server stopped
+2026-06-22 16:25:53,131 - tripo_addon - ERROR - Error updating user balance: [1002] Authentication failed Suggestion: Check if your credentials is valid, and ensure you set it correctly
+2026-06-22 16:26:06,011 - tripo_addon - ERROR - Error updating user balance: [1002] Authentication failed Suggestion: Check if your credentials is valid, and ensure you set it correctly
+2026-06-22 16:38:26,493 - tripo_addon - ERROR - Error updating user balance: [1002] Authentication failed Suggestion: Check if your credentials is valid, and ensure you set it correctly
+2026-06-22 16:38:35,883 - tripo_addon - ERROR - Error updating user balance: [1002] Authentication failed Suggestion: Check if your credentials is valid, and ensure you set it correctly
+2026-07-29 20:52:52,214 - tripo_addon - ERROR - Error updating user balance: [Errno -3] Temporary failure in name resolution
+2026-07-29 20:53:07,229 - tripo_addon - ERROR - Error updating user balance: [Errno -3] Temporary failure in name resolution
+2026-08-19 16:31:06,877 - tripo_addon - ERROR - Error updating user balance: HTTP 502: Failed to parse response as JSON. Response: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+</body>
+</html>
+...
+2026-08-28 05:18:55,181 - tripo_addon - ERROR - Error updating user balance: [Errno -3] Temporary failure in name resolution
+2026-08-28 05:18:56,293 - tripo_addon - ERROR - Error updating user balance: [Errno -3] Temporary failure in name resolution
+2026-08-28 05:40:33,287 - tripo_addon - ERROR - Error updating user balance: [Errno -3] Temporary failure in name resolution
+2026-08-28 05:40:35,695 - tripo_addon - ERROR - Error updating user balance: [Errno -3] Temporary failure in name resolution

@@ -1,0 +1,153 @@
+Unassigned ▸ Cloth Dynamics (Experimental)
+   Collection
+   Viewer Node
+   right.png
+   back.png
+   left.png
+   face.png
+   Collection 2
+Edge (Ctrl E) ▸ Un-Subdivide
+   collide
+   head.tga
+   head.png
+   body.png
+   Face
+   imp_console.tga
+   imp_console_test.png
+   imp_console.png
+F transfer_shape.py
+F Text
+F shapekeyremove_.py
+F copy_shapekey.py
+   body_white
+   legs_white
+   feet_white.png
+   legs_white.png
+   body_white.png
+  horse_final_skeleton
+jumpA
+   submesh_0
+Face (Ctrl F) ▸ Grid Fill
+   body
+deathA
+canterA
+walkA
+trotA
+gallopA
+Node ▸ Swap (Shift S) ▸ Texture ▸ Image Texture
+   blade_color
+L  fur01|[essentials_brushes-mesh_sculpt.blend]
+  1
+   skin_male
+   skin_female
+ 0 MI_PC_Head_Female1
+Vertex (Ctrl V) ▸ Vertex Groups (Ctrl G) ▸ Assign to New Group
+LeftBust
+Curve ▸ Set Spline Type ▸ Bézier
+   Material
+   uv
+Merge Selected Nodes ▸ Use Mix Nodes ▸ Difference
+Float2
+   skin_female.png
+   MI_PC_Head_Female3.png
+   MI_PC_Head_Female1.png
+   MI_PC_Head_Female2.png
+   MI_PC_Head_Female4.png
+Diffuse BSDF ▸ Color
+   MI_PC_Head_Male1.png
+Diffuse BSDF ▸ BSDF
+   skin_male.png
+   female_body.002
+L0 Texture.001|[essentials_brushes-mesh_texture.blend]
+L  rouge|[essentials_brushes-mesh_texture.blend]
+L0 Texture|[essentials_brushes-mesh_texture.blend]
+L0 rouge|[essentials_brushes-mesh_texture.blend]
+L0 bleu.png.001|[essentials_brushes-mesh_texture.blend]
+L  rouge.png|[essentials_brushes-mesh_texture.blend]
+L  bleu.png.001|[essentials_brushes-mesh_texture.blend]
+L  bleu.png|[essentials_brushes-mesh_texture.blend]
+L0 bleu|[essentials_brushes-mesh_texture.blend]
+   flag_base
+ 0 flag_seconde
+   flag_color
+   flagbase.jpeg.001
+L  Texture|[essentials_brushes-mesh_texture.blend]
+Add (Shift A) ▸ Texture ▸ Voronoi Texture
+Add (Shift A) ▸ Color ▸ Mix Color ▸ Difference
+   metal
+   rope
+   detail
+   brick
+   main
+   wall
+   wall_bake
+Add (Shift A) ▸ Shader ▸ Diffuse BSDF
+   flag_color1
+   flag_base1
+   flag_color2
+   flag_base2
+   flag_seconde2
+   flagbase_secode
+   flagbase_second2.jpeg
+   flagbase_second2
+ 0 flagbase_second2.001
+   flagbase2
+   flagbase.jpeg
+   flagbase1.jpeg
+   flagcolor_bake
+ 0 wall_bake
+   wood_bake
+   brick_bake
+Group
+Add (Shift A) ▸ Texture ▸ Noise Texture
+Add (Shift A) ▸ Texture ▸ Brick Texture
+Node ▸ Swap (Shift S) ▸ Utilities ▸ Vector ▸ Vector Math ▸ Normalize
+Add (Shift A) ▸ Color ▸ Mix Color ▸ Multiply
+UVMap
+UVMap2
+
+   effector
+Add (Shift A) ▸ Utilities ▸ Vector ▸ Vector Math ▸ Scale
+   Armature_Clean
+   flag.jpeg
+   kiri.png
+Add (Shift A) ▸ Displacement ▸ Normal Map
+Add (Shift A) ▸ Utilities ▸ Math ▸ Mix
+Add (Shift A) ▸ Displacement ▸ Bump
+Add (Shift A) ▸ Displacement ▸ Displacement
+ 0 wood
+   wood
+Add (Shift A) ▸ Color ▸ Mix Color
+Node ▸ Swap (Shift S) ▸ Color ▸ Hue/Saturation/Value
+Add (Shift A) ▸ Layout ▸ Reroute
+Add (Shift A) ▸ Utilities ▸ Vector ▸ Separate XYZ
+Add (Shift A) ▸ Utilities ▸ Vector ▸ Combine XYZ
+Add (Shift A) ▸ Color ▸ Mix Color ▸ Divide
+Add (Shift A) ▸ Utilities ▸ Math ▸ Math ▸ Divide
+Add (Shift A) ▸ Color ▸ Color Ramp
+Add (Shift A) ▸ Color ▸ Mix Color ▸ Lighten
+   cobblestone
+Add (Shift A) ▸ Shader ▸ Principled BSDF
+Add (Shift A) ▸ Texture ▸ Image Texture
+Add (Shift A) ▸ Shader ▸ Mix Shader
+Node ▸ Swap (Shift S) ▸ Color ▸ Mix Color
+Add (Shift A) ▸ Input ▸ Constant ▸ Boolean
+Add (Shift A) ▸ Color ▸ Invert Color
+   wood2
+Add (Shift A) ▸ Input ▸ Constant ▸ Color
+Add (Shift A) ▸ Color ▸ Hue/Saturation/Value
+   ref.png
+   rock_basecolor
+   rock_normal
+   rock_roughtness
+   wood2_basecolor
+   wood2_normal
+   wood2_roughness
+   wood_basecolor
+   wood_normal
+   wood_roughtness
+Add (Shift A) ▸ Input ▸ Texture Coordinate ▸ UV
+Add (Shift A) ▸ Input ▸ Constant ▸ Value
+Add (Shift A) ▸ Output ▸ AOV Output
+Add (Shift A) ▸ Output ▸ Material Output
+Add (Shift A) ▸ Utilities ▸ Vector ▸ Vector Rotate

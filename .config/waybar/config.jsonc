@@ -162,7 +162,8 @@
         "format-wifi": " ",
         "format-ethernet": " {ipaddr}/{cidr}",
         "format-disconnected": "⚠ Disconnected",
-        "tooltip-format": "{ifname} {essid} via {gwaddr}"
+        "tooltip-format": "{ifname} {essid} via {gwaddr}",
+        "on-click": "nmtui"
     },
     "bluetooth": {
         "format": " {status}",

@@ -16,15 +16,15 @@ PACKAGES=(
     "chromium" #[cite: 1, 6]
     "grim" #[cite: 1]
     "slurp" #[cite: 1]
-    "wl-clipboard" # Requis pour wl-copy[cite: 1]
-    "wireplumber" # Requis pour wpctl[cite: 1, 2]
+    "wl-clipboard" #[cite: 1]
+    "wireplumber" #[cite: 1, 2]
     "brightnessctl" #[cite: 1, 2]
     "playerctl" #[cite: 1]
     "socat" #[cite: 4]
     "jq" #[cite: 5]
     "pavucontrol" #[cite: 2]
-    "bluez" # Requis pour bluetoothctl[cite: 2]
-    "bluez-utils" # Requis pour bluetoothctl[cite: 2]
+    "bluez" #[cite: 2]
+    "bluez-utils" #[cite: 2]
     "ttf-jetbrains-mono-nerd" #[cite: 3]
     "ttf-firacode-nerd" #[cite: 3]
     "vim" #[cite: 6]
@@ -49,16 +49,17 @@ else
     echo "AUR helper introuvable. Installe manuellement : ${AUR_PACKAGES[*]}"
 fi
 
-echo "Importation des configurations..."
+echo "Création des liens symboliques..."
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET_CONFIGS=("hypr" "waybar" "yazi" "blender")
 
 for conf in "${TARGET_CONFIGS[@]}"; do
     if [ -d "$REPO_DIR/.config/$conf" ]; then
-        mkdir -p ~/.config/"$conf"
-        # -rT fusionne le contenu sans créer de sous-dossier accidentel
-        cp -rT "$REPO_DIR/.config/$conf" ~/.config/"$conf"
-        echo "-> $conf copié."
+        # Suppression préalable pour éviter les conflits ou l'imbrication
+        rm -rf ~/.config/"$conf"
+        # Création du lien symbolique
+        ln -s "$REPO_DIR/.config/$conf" ~/.config/"$conf"
+        echo "-> Lien symbolique créé pour $conf."
     else
         echo "-> Avertissement : $conf introuvable dans le dépôt."
     fi

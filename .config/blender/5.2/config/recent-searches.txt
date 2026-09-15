@@ -44,7 +44,6 @@ L  fur01|[essentials_brushes-mesh_sculpt.blend]
 Vertex (Ctrl V) ▸ Vertex Groups (Ctrl G) ▸ Assign to New Group
 LeftBust
 Curve ▸ Set Spline Type ▸ Bézier
-   Material
    uv
 Merge Selected Nodes ▸ Use Mix Nodes ▸ Difference
 Float2
@@ -105,7 +104,6 @@ Node ▸ Swap (Shift S) ▸ Utilities ▸ Vector ▸ Vector Math ▸ Normalize
 Add (Shift A) ▸ Color ▸ Mix Color ▸ Multiply
 UVMap
 UVMap2
-
    effector
 Add (Shift A) ▸ Utilities ▸ Vector ▸ Vector Math ▸ Scale
    Armature_Clean
@@ -127,7 +125,6 @@ Add (Shift A) ▸ Utilities ▸ Math ▸ Math ▸ Divide
 Add (Shift A) ▸ Color ▸ Color Ramp
 Add (Shift A) ▸ Color ▸ Mix Color ▸ Lighten
    cobblestone
-Add (Shift A) ▸ Shader ▸ Principled BSDF
 Add (Shift A) ▸ Texture ▸ Image Texture
 Add (Shift A) ▸ Shader ▸ Mix Shader
 Node ▸ Swap (Shift S) ▸ Color ▸ Mix Color
@@ -143,7 +140,6 @@ Add (Shift A) ▸ Color ▸ Hue/Saturation/Value
    wood2_basecolor
    wood2_normal
    wood2_roughness
-   wood_basecolor
    wood_normal
    wood_roughtness
 Add (Shift A) ▸ Input ▸ Texture Coordinate ▸ UV
@@ -151,3 +147,15 @@ Add (Shift A) ▸ Input ▸ Constant ▸ Value
 Add (Shift A) ▸ Output ▸ AOV Output
 Add (Shift A) ▸ Output ▸ Material Output
 Add (Shift A) ▸ Utilities ▸ Vector ▸ Vector Rotate
+Add (Shift A) ▸ Input ▸ Volume Info
+Principled Hair BSDF ▸ BSDF
+Add (Shift A) ▸ Shader ▸ Principled BSDF
+   wood_basecolor
+   wood_basecolor.001
+Add (Shift A) ▸ Shader ▸ Volume Scatter
+   Material.002
+   Material.001
+   Material
+   boule
+   Sphere
+

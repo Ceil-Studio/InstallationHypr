@@ -159,10 +159,10 @@
         "on-scroll-down": "brightnessctl set 5%-"
     },
     "network": {
-        "format-wifi": " {essid}",
+        "format-wifi": " ",
         "format-ethernet": " {ipaddr}/{cidr}",
         "format-disconnected": "⚠ Disconnected",
-        "tooltip-format": "{ifname} via {gwaddr}"
+        "tooltip-format": "{ifname} {essid} via {gwaddr}"
     },
     "bluetooth": {
         "format": " {status}",
@@ -179,7 +179,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": " {}%"
+        "format": "Ram {}%"
     },
     "temperature": {
         "critical-threshold": 80,

@@ -2,3 +2,12 @@
 on = [ "T" ]
 run = "shell 'kate %s' --orphan"
 desc = "Ouvrir dans Kate"
+
+[[mgr.prepend_keymap]]
+on = [ "B" ]
+run = "shell 'zip -r archive.zip %h' --orphan"
+desc = "zip"
+
+
+
+

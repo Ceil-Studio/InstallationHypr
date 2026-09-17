@@ -5,8 +5,8 @@
 /home/arch/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/male4/
 [Recent]
 /home/arch/commande/bruce/
-/home/arch/projet-perso/
 /home/arch/script_blender/
+/home/arch/projet-perso/
 /home/arch/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/male4/
 !Downloads
 /home/arch/Téléchargements/

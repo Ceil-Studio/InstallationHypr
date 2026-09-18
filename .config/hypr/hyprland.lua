@@ -47,7 +47,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("mako")
     hl.exec_cmd("~/.config/waybar/ws_daemon.sh")
     hl.exec_cmd("wayvnc 0.0.0.0")
-    hl.exec_cmd("ssh -N -R 8000:localhost:5900 main &")
+    hl.exec_cmd("sleep 30 && ssh -N -R 6000:localhost:5900 main &")
 
 
 

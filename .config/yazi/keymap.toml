@@ -1,6 +1,6 @@
 [[mgr.prepend_keymap]]
 on = [ "T" ]
-run = "shell 'kate %s' --orphan"
+run = "shell 'kate %h' --orphan"
 desc = "Ouvrir dans Kate"
 
 [[mgr.prepend_keymap]]

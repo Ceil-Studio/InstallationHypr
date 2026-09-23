@@ -51,7 +51,7 @@ fi
 
 echo "Création des liens symboliques..."
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-TARGET_CONFIGS=("hypr" "waybar" "yazi" "blender")
+TARGET_CONFIGS=("hypr" "waybar" "yazi" "blender" "chromium")
 
 for conf in "${TARGET_CONFIGS[@]}"; do
     if [ -d "$REPO_DIR/.config/$conf" ]; then

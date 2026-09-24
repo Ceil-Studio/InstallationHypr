@@ -1,0 +1,146 @@
+{
+   "checksum": "f3c55df5abb745c384ec8628508714a1",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13429564229219717",
+            "date_last_used": "13434735677061264",
+            "guid": "2eb94c70-5e56-4b25-be90-e68a14d6aa80",
+            "id": "5",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://gemini.google.com/app?utm_source=app_launcher&utm_medium=owned&utm_campaign=base_all"
+         }, {
+            "date_added": "13429572904589258",
+            "date_last_used": "13434735925905041",
+            "guid": "fe948978-d569-4880-a056-1d7e89d0707a",
+            "id": "7",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://github.com/Ceil-Studio/"
+         }, {
+            "date_added": "13434362745976900",
+            "date_last_used": "13434636566419296",
+            "guid": "c828625e-68f7-4f8a-8529-6cad06c647d6",
+            "id": "19",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://www.twitch.tv/"
+         }, {
+            "date_added": "13429572913829051",
+            "date_last_used": "13434637271371704",
+            "guid": "00df0cc5-dc5d-4e23-9494-9eaa8212fd42",
+            "id": "8",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://www.youtube.com/"
+         }, {
+            "date_added": "13429572932837001",
+            "date_last_used": "13434636533397779",
+            "guid": "9746a58e-d1f7-466f-adca-4617e0216e23",
+            "id": "9",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://drive.google.com/drive/home"
+         }, {
+            "date_added": "13429653477429284",
+            "date_last_used": "13434191595481958",
+            "guid": "d5a828bc-9078-40c5-b3ea-453d74b8a52f",
+            "id": "11",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://wiki.facepunch.com/gmod"
+         }, {
+            "date_added": "13429991833643995",
+            "date_last_used": "0",
+            "guid": "e98a29b4-fbfe-4188-b41e-463f7be29027",
+            "id": "13",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://music.youtube.com/"
+         }, {
+            "date_added": "13433420359735680",
+            "date_last_used": "13433527399721764",
+            "guid": "54b59c8c-3e43-4e9c-b554-c5dc0fa00765",
+            "id": "15",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Radio Garden",
+            "type": "url",
+            "url": "https://radio.garden/listen/cfls-92/0Eknmu-H?hl=fr"
+         }, {
+            "date_added": "13433969384112000",
+            "date_last_used": "13434735450478535",
+            "guid": "591c428c-d263-4720-bd12-49b8a1270439",
+            "id": "17",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Portail TGV INOUI",
+            "type": "url",
+            "url": "https://wifi.sncf/fr/home"
+         }, {
+            "date_added": "13434626596228922",
+            "date_last_used": "13434707049272254",
+            "guid": "b94836ac-380a-4721-9172-58deac6e44e4",
+            "id": "21",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://www.fanclubplaystationofficiel.com/ps12345adm"
+         } ],
+         "date_added": "13429564196566404",
+         "date_last_used": "0",
+         "date_modified": "13434626596228922",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Barre de favoris",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13429564196566404",
+         "date_last_used": "0",
+         "date_modified": "13429564229219717",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Autres favoris",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13429564196566404",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Favoris d'appareils mobiles",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

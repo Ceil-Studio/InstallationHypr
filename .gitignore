@@ -1,0 +1,15 @@
+# Ignorer tout le dossier .config par défaut
+.config/*
+
+# Whitelister les configs dont tu as besoin (à adapter)
+!.config/hypr/
+!.config/waybar/
+!.config/yazi/
+!.config/blender/
+
+# Tes règles Chromium actuelles
+!.config/chromium/
+.config/chromium/*
+!.config/chromium/Default/
+.config/chromium/Default/*
+!.config/chromium/Default/Bookmarks

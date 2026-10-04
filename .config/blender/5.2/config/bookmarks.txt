@@ -4,6 +4,8 @@
 /home/arch/commande/
 /home/arch/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/male4/
 [Recent]
+!Videos
+/home/arch/Vidéos/
 /home/arch/commande/bruce/
 /home/arch/script_blender/
 /home/arch/projet-perso/
@@ -14,4 +16,3 @@
 /home/arch/script_blender/shader asset/
 /home/arch/Documents/
 /tmp/
-/home/arch/commande/layer/drapeau/decompile/compiled 0.74/materials/models/ceil_pm/layer/drapeau/

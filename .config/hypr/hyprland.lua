@@ -46,7 +46,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("waybar")
     hl.exec_cmd("mako")
     hl.exec_cmd("~/.config/waybar/ws_daemon.sh")
-    hl.exec_cmd("wayvnc 0.0.0.0")
+    hl.exec_cmd("wayvnc --config=$HOME/.config/wayvnc/config 0.0.0.0 5900")
     hl.exec_cmd("while true; do ssh -N -R 6000:localhost:5900 -o ServerAliveInterval=10 -o ServerAliveCountMax=3 -o ExitOnForwardFailure=yes main; sleep 5; done &")
 
 

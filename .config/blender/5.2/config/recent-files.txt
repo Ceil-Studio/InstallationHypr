@@ -1,3 +1,6 @@
+/home/arch/commande/mantaro/tetes_modulable.blend
+/home/arch/commande/combine/combine.blend
+/home/arch/commande/mantaro/combine.blend
 /home/arch/projet-perso/HorseBase/decompile/horse.blend
 /home/arch/commande/lapin/lapin.blend
 /home/arch/commande/layer/drapeau/layer_drapeau.blend

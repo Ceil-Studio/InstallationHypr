@@ -80,7 +80,6 @@ Add (Shift A) ▸ Color ▸ Mix Color ▸ Difference
    main
    wall
    wall_bake
-Add (Shift A) ▸ Shader ▸ Diffuse BSDF
    flag_color1
    flag_base1
    flag_color2
@@ -159,3 +158,11 @@ Add (Shift A) ▸ Shader ▸ Volume Scatter
    boule
    Sphere
 
+   t_luck_001.png
+   TETE01_skeleton
+   t_leofold_001.png
+Add (Shift A) ▸ Shader ▸ Diffuse BSDF
+   t_julius_001.png
+Mesh ▸ Normals (Alt N) ▸ Recalculate Outside|Ctrl N
+Deform ▸ Smooth Corrective
+Mask ▸ Fill Mask

@@ -30,6 +30,7 @@ PACKAGES=(
     "vim" #[cite: 6]
     "kate" #[cite: 6, 7]
     "gimp" #[cite: 6]
+    "tmux"
 )
 
 AUR_PACKAGES=(

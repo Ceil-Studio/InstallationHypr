@@ -54,7 +54,6 @@ Float2
    MI_PC_Head_Female4.png
 Diffuse BSDF ▸ Color
    MI_PC_Head_Male1.png
-Diffuse BSDF ▸ BSDF
    skin_male.png
    female_body.002
 L0 Texture.001|[essentials_brushes-mesh_texture.blend]
@@ -96,7 +95,6 @@ Add (Shift A) ▸ Color ▸ Mix Color ▸ Difference
  0 wall_bake
    wood_bake
    brick_bake
-Group
 Add (Shift A) ▸ Texture ▸ Noise Texture
 Add (Shift A) ▸ Texture ▸ Brick Texture
 Node ▸ Swap (Shift S) ▸ Utilities ▸ Vector ▸ Vector Math ▸ Normalize
@@ -157,12 +155,28 @@ Add (Shift A) ▸ Shader ▸ Volume Scatter
    Material
    boule
    Sphere
-
    t_luck_001.png
    TETE01_skeleton
    t_leofold_001.png
-Add (Shift A) ▸ Shader ▸ Diffuse BSDF
    t_julius_001.png
 Mesh ▸ Normals (Alt N) ▸ Recalculate Outside|Ctrl N
 Deform ▸ Smooth Corrective
 Mask ▸ Fill Mask
+Add (Shift A) ▸ Shader ▸ Diffuse BSDF
+   M_Julius_001_Face_RT
+   M_Yami_001_Face_RT
+   M_Update_05_2_PC_01_Face
+   M_Sally_001_Face_RT
+   M_Luck_001_Face_RT
+   M_Leofold_001_Face_RT
+   M_Kiato_001_Face_RT
+   M_Charmy_001_Face_RT
+   M_Finral_001_Face_RT
+   M_Asta_001_Face_RT
+ 0 M_Asta_001_Face_RT
+   face_basecolor
+Group
+
+Group.001
+Principled BSDF ▸ BSDF
+Diffuse BSDF ▸ BSDF

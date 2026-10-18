@@ -14,14 +14,16 @@ window#waybar {
 
 tooltip {
     background: #1e1e2e;
-    border: 1px solid #313244;
+    border: 1px solid #45475a;
     border-radius: 8px;
+    padding: 6px 10px;
 }
 
 tooltip label {
     color: #cdd6f4;
 }
 
+/* Groupe Workspaces */
 #custom-ws1,
 #custom-ws2,
 #custom-ws3,
@@ -70,6 +72,85 @@ color: #1e1e2e;
 font-weight: bold;
 }
 
+/* TIROIR TMUX (DRAWER) */
+#group-tmux {
+    background-color: #313244;
+    border-radius: 6px;
+    margin: 4px;
+    padding: 0 4px;
+    transition: all 0.25s ease;
+}
+
+#group-tmux:hover {
+    background-color: #3b3d52;
+}
+
+/* Icône principale Tmux */
+#custom-tmux {
+    color: #89b4fa;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 0 12px;
+    margin: 3px 2px;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+#custom-tmux.empty {
+    color: #6c7086;
+}
+
+#custom-tmux.detached {
+    color: #1e1e2e;
+    background-color: #fab387;
+    border-radius: 4px;
+    padding: 0 8px;
+    margin: 3px 2px;
+}
+
+/* Boutons enfants du tiroir - ciblage direct par ID */
+#custom-tmux-new,
+#custom-tmux-attach,
+#custom-tmux-picker,
+#custom-tmux-kill {
+    padding: 0 10px;
+    margin: 3px 4px;
+    border-radius: 6px;
+    background-color: #313244;
+    color: #cdd6f4;
+    font-size: 14px;
+    min-width: 16px;
+    transition: all 0.2s ease;
+}
+
+#group-tmux:hover #custom-tmux-new,
+#group-tmux:hover #custom-tmux-attach,
+#group-tmux:hover #custom-tmux-picker,
+#group-tmux:hover #custom-tmux-kill {
+    background-color: #45475a;
+}
+
+#custom-tmux-new:hover {
+    background-color: #585b70;
+    color: #a6e3a1;
+}
+
+#custom-tmux-attach:hover {
+    background-color: #585b70;
+    color: #89b4fa;
+}
+
+#custom-tmux-picker:hover {
+    background-color: #585b70;
+    color: #cba6f7;
+}
+
+#custom-tmux-kill:hover {
+    background-color: #585b70;
+    color: #f38ba8;
+}
+
+/* MODULES STANDARD */
 #window,
 #mpris,
 #pulseaudio,
@@ -88,6 +169,21 @@ margin: 4px;
 border-radius: 6px;
 background-color: #313244;
 color: #cdd6f4;
+transition: all 0.2s ease;
+}
+
+/* Effets hover sur les modules interactifs */
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#bluetooth:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#battery:hover,
+#power-profiles-daemon:hover,
+#clock:hover {
+background-color: #45475a;
 }
 
 #mpris {
@@ -175,6 +271,10 @@ color: #89dceb;
 
 #pulseaudio.muted {
 color: #f38ba8;
+}
+
+#network {
+color: #89dceb;
 }
 
 #network.disconnected {

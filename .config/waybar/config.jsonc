@@ -5,6 +5,7 @@
     "spacing": 4,
     "exclusive": true,
     "modules-left": [
+        "group/tmux",
         "group/workspaces",
         "hyprland/window"
     ],
@@ -24,6 +25,55 @@
         "clock",
         "tray"
     ],
+    "group/tmux": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 400,
+            "children-class": "tmux-drawer-child",
+            "transition-left-to-right": true,
+            "click-to-reveal": false
+        },
+        "modules": [
+            "custom/tmux",
+            "custom/tmux-new",
+            "custom/tmux-attach",
+            "custom/tmux-picker",
+            "custom/tmux-kill"
+        ]
+    },
+    "custom/tmux": {
+        "format": "{}",
+        "exec": "~/.config/waybar/tmux_status.sh",
+        "return-type": "json",
+        "interval": 2,
+        "on-click": "kitty -e tmux",
+        "on-click-right": "kitty -e tmux a",
+        "tooltip": true
+    },
+    "custom/tmux-new": {
+        "format": "󰐕",
+        "tooltip": true,
+        "tooltip-format": "Nouveau tmux",
+        "on-click": "kitty -e tmux"
+    },
+    "custom/tmux-attach": {
+        "format": "󰁌",
+        "tooltip": true,
+        "tooltip-format": "Rattacher la dernière session détachée (tmux a)",
+        "on-click": "kitty -e tmux a"
+    },
+    "custom/tmux-picker": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Choisir une session (liste)",
+        "on-click": "~/.config/waybar/tmux_picker.sh"
+    },
+    "custom/tmux-kill": {
+        "format": "󰅖",
+        "tooltip": true,
+        "tooltip-format": "Fermer les sessions détachées",
+        "on-click": "~/.config/waybar/tmux_kill.sh"
+    },
     "group/workspaces": {
         "orientation": "horizontal",
         "modules": [
@@ -125,8 +175,13 @@
         "rewrite": {
             "(.*) - NVIM": " $1",
             "(.*) - Blender": " $1",
-            "(.*) - Garry's Mod": " $1"
-        }
+            "(.*) - Garry's Mod": " $1",
+            "(.*) — Mozilla Firefox": " $1",
+            "(.*) - Brave": " $1",
+            "(.*) - Discord": " $1",
+            "^kitty$": " Terminal"
+        },
+        "separate-outputs": true
     },
     "mpris": {
         "format": "{player_icon} {dynamic}",
@@ -139,16 +194,21 @@
         "status-icons": {
             "paused": "⏸"
         },
-        "max-length": 45
+        "max-length": 45,
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
     },
     "pulseaudio": {
         "scroll-step": 5,
         "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂰 {volume}%",
         "format-muted": " Muted",
         "format-icons": {
             "headphone": "",
             "default": ["", "", ""]
         },
+        "tooltip-format": "{desc} ({volume}%)",
         "on-click-right": "pavucontrol",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
@@ -159,11 +219,14 @@
         "on-scroll-down": "brightnessctl set 5%-"
     },
     "network": {
-        "format-wifi": " ",
-        "format-ethernet": " {ipaddr}/{cidr}",
-        "format-disconnected": "⚠ Disconnected",
-        "tooltip-format": "{ifname} {essid} via {gwaddr}",
-        "on-click": "nmtui"
+        "format-wifi": "  {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰤮 Disconnected",
+        "tooltip-format-wifi": "Wi-Fi: {essid} ({signalStrength}%)\nIP: {ipaddr}\nPasserelle: {gwaddr}\nInterface: {ifname}",
+        "tooltip-format-ethernet": "Ethernet: {ifname}\nIP: {ipaddr}/{cidr}\nPasserelle: {gwaddr}",
+        "tooltip-format-disconnected": "Déconnecté",
+        "on-click": "kitty -e nmtui"
     },
     "bluetooth": {
         "format": " {status}",
@@ -177,10 +240,15 @@
     },
     "cpu": {
         "format": " {usage}%",
-        "tooltip": false
+        "tooltip": true,
+        "tooltip-format": "CPU: {usage}%\nFréquence: {avg_frequency} GHz",
+        "on-click": "kitty -e htop"
     },
     "memory": {
-        "format": "Ram {}%"
+        "format": "󰍛 {}%",
+        "tooltip": true,
+        "tooltip-format": "RAM: {used:0.1f}GiB / {total:0.1f}GiB ({percentage}%)\nSwap: {swapUsed:0.1f}GiB / {swapTotal:0.1f}GiB ({swapPercentage}%)",
+        "on-click": "kitty -e htop"
     },
     "temperature": {
         "critical-threshold": 80,
@@ -211,8 +279,24 @@
     },
     "clock": {
         "format": "{:%H:%M}",
-        "format-alt": "{:%Y-%m-%d}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+        "format-alt": " {:%d/%m/%Y}   {:%H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#cdd6f4'><b>{}</b></span>",
+                "days": "<span color='#bac2de'><b>{}</b></span>",
+                "weeks": "<span color='#a6adc8'><b>W{}</b></span>",
+                "weekdays": "<span color='#fab387'><b>{}</b></span>",
+                "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode"
+        }
     },
     "tray": {
         "icon-size": 18,

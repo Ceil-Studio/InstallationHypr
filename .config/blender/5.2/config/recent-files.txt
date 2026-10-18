@@ -1,3 +1,5 @@
+/home/arch/commande/dina/rework_dina.blend
+/home/arch/commande/GSA/basepm/gsa.blend
 /home/arch/commande/mantaro/tetes_modulable.blend
 /home/arch/commande/combine/combine.blend
 /home/arch/commande/mantaro/combine.blend

@@ -117,6 +117,15 @@ if [ -f "$REPO_DIR/.tmux.conf" ]; then
     echo "-> Lien créé pour ~/.tmux.conf"
 fi
 
+# Cas particulier .ssh/config
+if [ -f "$REPO_DIR/.ssh/config" ]; then
+    mkdir -p ~/.ssh
+    chmod 700 ~/.ssh
+    ln -sf "$REPO_DIR/.ssh/config" ~/.ssh/config
+    chmod 600 ~/.ssh/config
+    echo "-> Configuration ~/.ssh/config liée avec permissions sécurisées (600)."
+fi
+
 # 7. Permissions d'exécution sur tous les scripts Waybar
 if [ -d ~/.config/waybar ]; then
     chmod +x ~/.config/waybar/*.sh 2>/dev/null || true
@@ -126,5 +135,13 @@ fi
 # 8. Activation des services indispensables
 echo ":: Activation des services nécessaires..."
 sudo systemctl enable --now bluetooth.service NetworkManager.service 2>/dev/null || true
+
+# 9. Rappel pour la génération de clés SSH si absentes
+if [ ! -f ~/.ssh/id_ed25519 ] && [ ! -f ~/.ssh/id_rsa ]; then
+    echo ""
+    echo ":: Info : Aucune clé SSH trouvée dans ~/.ssh/"
+    echo "   Pour générer une nouvelle clé Ed25519 propre :"
+    echo "   ssh-keygen -t ed25519 -C \"ton_email@exemple.com\""
+fi
 
 echo "Installation terminée avec succès !"

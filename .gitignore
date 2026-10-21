@@ -20,3 +20,8 @@
 *.log
 __pycache__/
 *.pyc
+
+# Sécurité SSH : bloquer toute clé privée ou certificat accidentel
+.ssh/id_*
+.ssh/*.key
+.ssh/*.pem

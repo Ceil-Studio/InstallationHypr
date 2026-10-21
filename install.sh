@@ -92,7 +92,7 @@ fi
 mkdir -p ~/.config
 
 # 6. Liens symboliques des dossiers de configuration
-TARGET_CONFIGS=("hypr" "waybar" "yazi" "blender" "xdg-desktop-portal")
+TARGET_CONFIGS=("hypr" "waybar" "yazi" "blender" "xdg-desktop-portal" "gtk-3.0" "gtk-4.0")
 
 echo ":: Création des liens symboliques..."
 for conf in "${TARGET_CONFIGS[@]}"; do

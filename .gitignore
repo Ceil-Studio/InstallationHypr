@@ -7,6 +7,8 @@
 !.config/yazi/
 !.config/blender/
 !.config/xdg-desktop-portal/
+!.config/gtk-3.0/
+!.config/gtk-4.0/
 
 # Tes règles Chromium actuelles (uniquement les Bookmarks)
 !.config/chromium/

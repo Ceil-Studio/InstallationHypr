@@ -96,43 +96,68 @@ TARGET_CONFIGS=("hypr" "waybar" "yazi" "blender" "xdg-desktop-portal")
 
 echo ":: Création des liens symboliques..."
 for conf in "${TARGET_CONFIGS[@]}"; do
-    if [ -d "$REPO_DIR/.config/$conf" ]; then
-        rm -rf ~/.config/"$conf"
-        ln -s "$REPO_DIR/.config/$conf" ~/.config/"$conf"
-        echo "-> Lien créé pour ~/.config/$conf"
+    SRC_DIR="$REPO_DIR/.config/$conf"
+    DEST_DIR="$HOME/.config/$conf"
+    if [ -d "$SRC_DIR" ]; then
+        if [ -L "$DEST_DIR" ] && [ "$(readlink -f "$DEST_DIR")" = "$(readlink -f "$SRC_DIR")" ]; then
+            echo "-> ~/.config/$conf est déjà correctement lié."
+        else
+            rm -rf "$DEST_DIR"
+            ln -sfn "$SRC_DIR" "$DEST_DIR"
+            echo "-> Lien créé pour ~/.config/$conf"
+        fi
     else
         echo "-> Avertissement : $conf introuvable dans le dépôt."
     fi
 done
 
 # Cas particulier Chromium : uniquement les Bookmarks pour éviter 3+ Go de cache dans Git
-if [ -f "$REPO_DIR/.config/chromium/Default/Bookmarks" ]; then
-    mkdir -p ~/.config/chromium/Default
-    cp "$REPO_DIR/.config/chromium/Default/Bookmarks" ~/.config/chromium/Default/Bookmarks
-    echo "-> Favoris Chromium restaurés."
+SRC_BOOKMARKS="$REPO_DIR/.config/chromium/Default/Bookmarks"
+DEST_BOOKMARKS="$HOME/.config/chromium/Default/Bookmarks"
+
+if [ -f "$SRC_BOOKMARKS" ]; then
+    if [ -f "$DEST_BOOKMARKS" ] && [ "$SRC_BOOKMARKS" -ef "$DEST_BOOKMARKS" ]; then
+        echo "-> Les favoris Chromium pointent déjà sur le même fichier (aucun besoin de copier)."
+    else
+        mkdir -p "$HOME/.config/chromium/Default"
+        cp "$SRC_BOOKMARKS" "$DEST_BOOKMARKS"
+        echo "-> Favoris Chromium restaurés."
+    fi
 fi
 
 # Cas particulier .tmux.conf (placé dans le repo)
 if [ -f "$REPO_DIR/.tmux.conf" ]; then
-    ln -sf "$REPO_DIR/.tmux.conf" ~/.tmux.conf
-    echo "-> Lien créé pour ~/.tmux.conf"
+    if [ -L ~/.tmux.conf ] && [ "$(readlink -f ~/.tmux.conf)" = "$(readlink -f "$REPO_DIR/.tmux.conf")" ]; then
+        echo "-> ~/.tmux.conf est déjà correctement lié."
+    else
+        ln -sf "$REPO_DIR/.tmux.conf" ~/.tmux.conf
+        echo "-> Lien créé pour ~/.tmux.conf"
+    fi
 fi
 
 # Cas particulier .ssh/config
 if [ -f "$REPO_DIR/.ssh/config" ]; then
     mkdir -p ~/.ssh
     chmod 700 ~/.ssh
-    ln -sf "$REPO_DIR/.ssh/config" ~/.ssh/config
+    if [ -L ~/.ssh/config ] && [ "$(readlink -f ~/.ssh/config)" = "$(readlink -f "$REPO_DIR/.ssh/config")" ]; then
+        echo "-> ~/.ssh/config est déjà correctement lié."
+    else
+        ln -sf "$REPO_DIR/.ssh/config" ~/.ssh/config
+        echo "-> Configuration ~/.ssh/config liée avec permissions sécurisées (600)."
+    fi
     chmod 600 ~/.ssh/config
-    echo "-> Configuration ~/.ssh/config liée avec permissions sécurisées (600)."
 fi
 
 # Cas particulier Antigravity CLI (~/.gemini/config)
 if [ -d "$REPO_DIR/.gemini/config" ]; then
     mkdir -p ~/.gemini
-    rm -rf ~/.gemini/config
-    ln -s "$REPO_DIR/.gemini/config" ~/.gemini/config
-    echo "-> Configuration Antigravity (~/.gemini/config) liée avec succès."
+    if [ -L ~/.gemini/config ] && [ "$(readlink -f ~/.gemini/config)" = "$(readlink -f "$REPO_DIR/.gemini/config")" ]; then
+        echo "-> ~/.gemini/config est déjà correctement lié."
+    else
+        rm -rf ~/.gemini/config
+        ln -sfn "$REPO_DIR/.gemini/config" ~/.gemini/config
+        echo "-> Configuration Antigravity (~/.gemini/config) liée avec succès."
+    fi
 fi
 
 # 7. Configuration de Yazi par défaut et thème sombre GTK

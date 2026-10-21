@@ -47,6 +47,7 @@ PACKAGES=(
     "libnotify"
     "htop"
     "yazi"
+    "xdg-utils"
     "vim"
     "kate"
     "gimp"
@@ -91,7 +92,7 @@ fi
 mkdir -p ~/.config
 
 # 6. Liens symboliques des dossiers de configuration
-TARGET_CONFIGS=("hypr" "waybar" "yazi" "blender")
+TARGET_CONFIGS=("hypr" "waybar" "yazi" "blender" "xdg-desktop-portal")
 
 echo ":: Création des liens symboliques..."
 for conf in "${TARGET_CONFIGS[@]}"; do
@@ -134,17 +135,28 @@ if [ -d "$REPO_DIR/.gemini/config" ]; then
     echo "-> Configuration Antigravity (~/.gemini/config) liée avec succès."
 fi
 
-# 7. Permissions d'exécution sur tous les scripts Waybar
+# 7. Configuration de Yazi par défaut et thème sombre GTK
+if command -v xdg-mime &>/dev/null; then
+    xdg-mime default yazi.desktop inode/directory
+    echo "-> Yazi défini comme gestionnaire de fichiers par défaut (inode/directory)."
+fi
+
+if command -v gsettings &>/dev/null; then
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' 2>/dev/null || true
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark' 2>/dev/null || true
+fi
+
+# 8. Permissions d'exécution sur tous les scripts Waybar
 if [ -d ~/.config/waybar ]; then
     chmod +x ~/.config/waybar/*.sh 2>/dev/null || true
     echo "-> Scripts Waybar rendus exécutables."
 fi
 
-# 8. Activation des services indispensables
+# 9. Activation des services indispensables
 echo ":: Activation des services nécessaires..."
 sudo systemctl enable --now bluetooth.service NetworkManager.service 2>/dev/null || true
 
-# 9. Rappel pour la génération de clés SSH si absentes
+# 10. Rappel pour la génération de clés SSH si absentes
 if [ ! -f ~/.ssh/id_ed25519 ] && [ ! -f ~/.ssh/id_rsa ]; then
     echo ""
     echo ":: Info : Aucune clé SSH trouvée dans ~/.ssh/"

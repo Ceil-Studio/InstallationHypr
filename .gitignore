@@ -25,3 +25,7 @@ __pycache__/
 .ssh/id_*
 .ssh/*.key
 .ssh/*.pem
+
+# Antigravity CLI : ne suivre que le dossier de configuration (règles et skills)
+.gemini/*
+!.gemini/config/

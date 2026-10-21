@@ -126,6 +126,14 @@ if [ -f "$REPO_DIR/.ssh/config" ]; then
     echo "-> Configuration ~/.ssh/config liée avec permissions sécurisées (600)."
 fi
 
+# Cas particulier Antigravity CLI (~/.gemini/config)
+if [ -d "$REPO_DIR/.gemini/config" ]; then
+    mkdir -p ~/.gemini
+    rm -rf ~/.gemini/config
+    ln -s "$REPO_DIR/.gemini/config" ~/.gemini/config
+    echo "-> Configuration Antigravity (~/.gemini/config) liée avec succès."
+fi
+
 # 7. Permissions d'exécution sur tous les scripts Waybar
 if [ -d ~/.config/waybar ]; then
     chmod +x ~/.config/waybar/*.sh 2>/dev/null || true

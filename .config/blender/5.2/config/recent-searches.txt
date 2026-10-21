@@ -175,8 +175,8 @@ Add (Shift A) ▸ Shader ▸ Diffuse BSDF
    M_Asta_001_Face_RT
  0 M_Asta_001_Face_RT
    face_basecolor
-Group
 
 Group.001
 Principled BSDF ▸ BSDF
 Diffuse BSDF ▸ BSDF
+Group

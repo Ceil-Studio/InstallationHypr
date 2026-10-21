@@ -1,75 +1,130 @@
 #!/bin/bash
+set -euo pipefail
 
 if [ "$EUID" -eq 0 ]; then
-  echo "Ne lance pas ce script en root. yay/paru en a besoin pour les paquets AUR."
+  echo "Erreur : Ne lance pas ce script en root. yay en a besoin pour l'AUR."
   exit 1
 fi
 
-# Dépendances identifiées depuis tes configurations
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# 1. Paquets officiels Pacman
 PACKAGES=(
+    # Base graphique & Composants Hyprland
     "hyprland"
+    "xdg-desktop-portal-hyprland"
+    "xdg-desktop-portal-gtk"
     "waybar"
-    "yazi"
-    # "blender"
-    "kitty" #[cite: 1]
-    "mako" #[cite: 1]
-    "chromium" #[cite: 1, 6]
-    "grim" #[cite: 1]
-    "slurp" #[cite: 1]
-    "wl-clipboard" #[cite: 1]
-    "wireplumber" #[cite: 1, 2]
-    "brightnessctl" #[cite: 1, 2]
-    "playerctl" #[cite: 1]
-    "socat" #[cite: 4]
-    "jq" #[cite: 5]
-    "pavucontrol" #[cite: 2]
-    "bluez" #[cite: 2]
-    "bluez-utils" #[cite: 2]
-    "ttf-jetbrains-mono-nerd" #[cite: 3]
-    "ttf-firacode-nerd" #[cite: 3]
-    "vim" #[cite: 6]
-    "kate" #[cite: 6, 7]
-    "gimp" #[cite: 6]
+    "mako"
+    "kitty"
     "tmux"
+
+    # Utilitaires Hyprland (disponibles dans les dépôts officiels extra)
+    "hyprlauncher"
+    "hyprshutdown"
+
+    # Capture d'écran, Presse-papier & Multimédia
+    "grim"
+    "slurp"
+    "wl-clipboard"
+    "pipewire"
+    "pipewire-pulse"
+    "pipewire-audio"
+    "wireplumber"
+    "pavucontrol"
+    "playerctl"
+    "brightnessctl"
+
+    # Réseau & Bluetooth
+    "networkmanager"
+    "bluez"
+    "bluez-utils"
+
+    # Outils CLI & Dépendances des scripts Waybar
+    "jq"
+    "socat"
+    "zenity"
+    "libnotify"
+    "htop"
+    "yazi"
+    "vim"
+    "kate"
+    "gimp"
+    "chromium"
+    # "blender"
+
+    # Polices d'icônes et d'écriture
+    "ttf-jetbrains-mono-nerd"
+    "ttf-firacode-nerd"
+
+    # Outils de build indispensables pour l'AUR
+    "base-devel"
+    "git"
 )
 
-AUR_PACKAGES=(
-    "hyprlauncher" #[cite: 1]
-    "hyprshutdown" #[cite: 1]
-)
+# 2. Paquets AUR (ajoute ici tes paquets spécifiques AUR si besoin)
+AUR_PACKAGES=()
 
-echo "Mise à jour et installation des paquets officiels..."
+echo ":: Mise à jour et installation des paquets officiels..."
 sudo pacman -Syu --needed "${PACKAGES[@]}"
 
-echo "Installation des paquets AUR..."
-if command -v yay &> /dev/null; then
-    yay -S --needed "${AUR_PACKAGES[@]}"
-elif command -v paru &> /dev/null; then
-    paru -S --needed "${AUR_PACKAGES[@]}"
-else
-    echo "AUR helper introuvable. Installe manuellement : ${AUR_PACKAGES[*]}"
+# 3. Installation automatique de yay si aucun helper AUR n'est détecté
+if ! command -v yay &> /dev/null && ! command -v paru &> /dev/null; then
+    echo ":: Aucun helper AUR détecté. Installation automatique de yay-bin..."
+    TEMP_DIR=$(mktemp -d)
+    git clone https://aur.archlinux.org/yay-bin.git "$TEMP_DIR/yay-bin"
+    (cd "$TEMP_DIR/yay-bin" && makepkg -si --noconfirm)
+    rm -rf "$TEMP_DIR"
 fi
 
-echo "Création des liens symboliques..."
-REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-TARGET_CONFIGS=("hypr" "waybar" "yazi" "blender" "chromium")
+# 4. Installation des paquets AUR éventuels
+if [ ${#AUR_PACKAGES[@]} -gt 0 ]; then
+    echo ":: Installation des paquets AUR..."
+    if command -v yay &> /dev/null; then
+        yay -S --needed "${AUR_PACKAGES[@]}"
+    elif command -v paru &> /dev/null; then
+        paru -S --needed "${AUR_PACKAGES[@]}"
+    fi
+fi
 
+# 5. Création des répertoires de base
+mkdir -p ~/.config
+
+# 6. Liens symboliques des dossiers de configuration
+TARGET_CONFIGS=("hypr" "waybar" "yazi" "blender")
+
+echo ":: Création des liens symboliques..."
 for conf in "${TARGET_CONFIGS[@]}"; do
     if [ -d "$REPO_DIR/.config/$conf" ]; then
-        # Suppression préalable pour éviter les conflits ou l'imbrication
         rm -rf ~/.config/"$conf"
-        # Création du lien symbolique
         ln -s "$REPO_DIR/.config/$conf" ~/.config/"$conf"
-        echo "-> Lien symbolique créé pour $conf."
+        echo "-> Lien créé pour ~/.config/$conf"
     else
         echo "-> Avertissement : $conf introuvable dans le dépôt."
     fi
 done
 
-# Rendre les daemons Waybar exécutables
-if [ -f ~/.config/waybar/ws_daemon.sh ] && [ -f ~/.config/waybar/ws_state.sh ]; then
-    chmod +x ~/.config/waybar/ws_daemon.sh ~/.config/waybar/ws_state.sh #[cite: 4, 5]
-    echo "Scripts Waybar rendus exécutables."
+# Cas particulier Chromium : uniquement les Bookmarks pour éviter 3+ Go de cache dans Git
+if [ -f "$REPO_DIR/.config/chromium/Default/Bookmarks" ]; then
+    mkdir -p ~/.config/chromium/Default
+    cp "$REPO_DIR/.config/chromium/Default/Bookmarks" ~/.config/chromium/Default/Bookmarks
+    echo "-> Favoris Chromium restaurés."
 fi
 
-echo "Installation terminée."
+# Cas particulier .tmux.conf (placé dans le repo)
+if [ -f "$REPO_DIR/.tmux.conf" ]; then
+    ln -sf "$REPO_DIR/.tmux.conf" ~/.tmux.conf
+    echo "-> Lien créé pour ~/.tmux.conf"
+fi
+
+# 7. Permissions d'exécution sur tous les scripts Waybar
+if [ -d ~/.config/waybar ]; then
+    chmod +x ~/.config/waybar/*.sh 2>/dev/null || true
+    echo "-> Scripts Waybar rendus exécutables."
+fi
+
+# 8. Activation des services indispensables
+echo ":: Activation des services nécessaires..."
+sudo systemctl enable --now bluetooth.service NetworkManager.service 2>/dev/null || true
+
+echo "Installation terminée avec succès !"

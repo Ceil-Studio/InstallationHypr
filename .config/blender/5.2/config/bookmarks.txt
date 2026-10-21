@@ -4,6 +4,8 @@
 /home/arch/commande/
 /home/arch/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/male4/
 [Recent]
+/home/arch/commande/harry/
+/home/arch/commande/harry/decompiled 0.74/head_f/
 /home/arch/script_blender/
 /home/arch/agy/
 /home/arch/commande/dina/decompile/armoire/
@@ -12,6 +14,3 @@
 /home/arch/commande/dina/decompile/panneau_1/
 /home/arch/commande/GSA/basepm/
 /home/arch/commande/mantaro/Content_et/models/etheria/decompiled/Et_PM01/
-/home/arch/commande/mantaro/CELCIUS/textures_png/
-!Downloads
-/home/arch/Téléchargements/

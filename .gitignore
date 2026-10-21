@@ -1,15 +1,22 @@
 # Ignorer tout le dossier .config par défaut
 .config/*
 
-# Whitelister les configs dont tu as besoin (à adapter)
+# Whitelister les configs dont tu as besoin
 !.config/hypr/
 !.config/waybar/
 !.config/yazi/
 !.config/blender/
 
-# Tes règles Chromium actuelles
+# Tes règles Chromium actuelles (uniquement les Bookmarks)
 !.config/chromium/
 .config/chromium/*
 !.config/chromium/Default/
 .config/chromium/Default/*
 !.config/chromium/Default/Bookmarks
+
+# Fichiers de sauvegarde et temporaires
+*.bak
+*~
+*.log
+__pycache__/
+*.pyc

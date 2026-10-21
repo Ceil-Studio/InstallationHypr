@@ -1,0 +1,378 @@
+{
+    "assets": {
+        "asset_material_type": "MAKESKIN",
+        "clothes": {
+            "accessories": {
+                "chance": 20,
+                "enabled": false,
+                "exclude": "",
+                "include_any": "glasses,necklace,bracelet,earring,watch,scarf,belt,backpack,bag",
+                "include_female": "",
+                "include_male": "",
+                "pack": ""
+            },
+            "feet": {
+                "chance": 100,
+                "enabled": true,
+                "exclude": "",
+                "include_any": "shoe,boot,sandal,sneaker,trainer,sock,slipper,loafer",
+                "include_female": "heel",
+                "include_male": "",
+                "pack": ""
+            },
+            "full_body": {
+                "chance": 25,
+                "enabled": true,
+                "exclude": "",
+                "include_any": "suit,uniform,overall,jumpsuit,robe,armor,armour,kimono,tunic",
+                "include_female": "dress,gown",
+                "include_male": "",
+                "pack": ""
+            },
+            "hands": {
+                "chance": 10,
+                "enabled": false,
+                "exclude": "",
+                "include_any": "glove,mitten",
+                "include_female": "",
+                "include_male": "",
+                "pack": ""
+            },
+            "head": {
+                "chance": 20,
+                "enabled": false,
+                "exclude": "",
+                "include_any": "hat,cap,helmet,beanie,beret,hood,turban",
+                "include_female": "",
+                "include_male": "",
+                "pack": ""
+            },
+            "lower_body": {
+                "chance": 100,
+                "enabled": true,
+                "exclude": "",
+                "include_any": "pants,jeans,shorts,trousers,slacks,leggings",
+                "include_female": "skirt",
+                "include_male": "",
+                "pack": ""
+            },
+            "underwear": {
+                "chance": 100,
+                "enabled": false,
+                "exclude": "",
+                "include_any": "underwear,swimsuit",
+                "include_female": "bra,panties,bikini,lingerie",
+                "include_male": "boxers,briefs,trunks",
+                "pack": ""
+            },
+            "upper_body": {
+                "chance": 100,
+                "enabled": true,
+                "exclude": "",
+                "include_any": "shirt,sweater,hoodie,jacket,vest,pullover,cardigan,coat,top",
+                "include_female": "blouse",
+                "include_male": "",
+                "pack": ""
+            }
+        },
+        "eyebrows": {
+            "enabled": true,
+            "exclude": "",
+            "include": "",
+            "pack": ""
+        },
+        "eyelashes": {
+            "enabled": true,
+            "exclude": "",
+            "include": "",
+            "pack": ""
+        },
+        "eyes": {
+            "material_type": "MAKESKIN",
+            "mode": "LOWPOLY",
+            "randomize_alt_materials": true
+        },
+        "hair": {
+            "enabled": true,
+            "exclude": "",
+            "fallback": true,
+            "include": "",
+            "match_gender": false,
+            "pack": "",
+            "randomize_alt_materials": false
+        },
+        "skin": {
+            "enabled": true,
+            "exclude": "special_suit",
+            "fallback": true,
+            "include": "",
+            "match_age": false,
+            "match_gender": false,
+            "match_race": false,
+            "material_instances": false,
+            "pack": "",
+            "skin_type": "MAKESKIN"
+        },
+        "teeth": {
+            "enabled": true,
+            "exclude": "",
+            "include": "",
+            "pack": ""
+        },
+        "tongue": {
+            "enabled": true,
+            "exclude": "",
+            "include": "",
+            "pack": ""
+        }
+    },
+    "batch": {
+        "count": 10,
+        "min_distance": 0.0,
+        "origin_x": 0.0,
+        "origin_y": 0.0,
+        "random_rotation": true,
+        "row_length": 10,
+        "row_shift_y": 1.0,
+        "spacing_x": 1.0,
+        "strategy": "GRID",
+        "x_max": 5.0,
+        "x_min": -5.0,
+        "y_max": 5.0,
+        "y_min": -5.0
+    },
+    "creation": {
+        "add_subdiv_modifier": true,
+        "auto_generate_rigify": true,
+        "detailed_helpers": true,
+        "extra_vertex_groups": true,
+        "mask_helpers": true,
+        "meta_rig_action": "hide",
+        "rig": "default",
+        "scale_factor": "METER",
+        "subdiv_render_levels": 1
+    },
+    "details": {
+        "enabled": true,
+        "sections": {
+            "arms": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "breast": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 0,
+                "min": 0
+            },
+            "buttocks": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "cheek": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "chin": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "ears": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "eyebrows": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "eyes": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "feet": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "forehead": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "genitals": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 0,
+                "min": 0
+            },
+            "hands": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "head": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "hip": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "legs": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "mouth": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "neck": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "nose": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "pelvis": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "stomach": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            },
+            "torso": {
+                "deviation": 0.5,
+                "exclude": "",
+                "include": "",
+                "max": 3,
+                "min": 0
+            }
+        },
+        "symmetry": true
+    },
+    "phenotype": {
+        "attributes": {
+            "age": {
+                "allowed": [
+                    "baby",
+                    "child",
+                    "young",
+                    "middleage",
+                    "old"
+                ],
+                "deviation": 0.5,
+                "include": true,
+                "neutral": 0.5
+            },
+            "cupsize": {
+                "deviation": 0.5,
+                "include": true,
+                "neutral": 0.5
+            },
+            "firmness": {
+                "deviation": 0.5,
+                "include": true,
+                "neutral": 0.5
+            },
+            "gender": {
+                "allowed": [
+                    "female",
+                    "male"
+                ],
+                "deviation": 0.5,
+                "include": true,
+                "neutral": 0.5
+            },
+            "height": {
+                "deviation": 0.5,
+                "include": true,
+                "neutral": 0.5
+            },
+            "muscle": {
+                "deviation": 0.5,
+                "include": true,
+                "neutral": 0.5
+            },
+            "proportions": {
+                "deviation": 0.5,
+                "include": true,
+                "neutral": 0.5
+            },
+            "race": {
+                "allowed": [
+                    "asian",
+                    "caucasian",
+                    "african"
+                ],
+                "include": true
+            },
+            "weight": {
+                "deviation": 0.5,
+                "include": true,
+                "neutral": 0.5
+            }
+        },
+        "breast_age_cutoff": 0.4000000059604645,
+        "breast_gender_cutoff": 0.6000000238418579,
+        "discrete_age": false,
+        "discrete_gender": true,
+        "discrete_race": false,
+        "distribution": "bell"
+    },
+    "version": 1
+}

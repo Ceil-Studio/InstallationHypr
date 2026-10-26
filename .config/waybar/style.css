@@ -1,98 +1,68 @@
 * {
-border: none;
-border-radius: 0;
-font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", sans-serif;
-font-size: 14px;
-min-height: 0;
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", sans-serif;
+    font-size: 15px;
+    min-height: 0;
 }
 
+/* ─── BARRE TRANSPARENTE (ÎLOTS FLOTTANTS) ─── */
 window#waybar {
-    background-color: rgba(30, 30, 46, 0.9);
+    background-color: transparent;
     color: #cdd6f4;
-    border-bottom: 2px solid #313244;
 }
 
 tooltip {
-    background: #1e1e2e;
+    background-color: rgba(24, 24, 37, 0.96);
     border: 1px solid #45475a;
-    border-radius: 8px;
-    padding: 6px 10px;
+    border-radius: 12px;
+    padding: 8px 12px;
 }
 
 tooltip label {
     color: #cdd6f4;
 }
 
-/* Groupe Workspaces */
-#custom-ws1,
-#custom-ws2,
-#custom-ws3,
-#custom-ws4,
-#custom-ws5,
-#custom-ws6,
-#custom-ws7,
-#custom-ws8,
-#custom-ws9,
-#custom-ws10 {
-padding: 0 10px;
-margin: 4px 2px;
-border-radius: 6px;
-background-color: #313244;
-color: #a6adc8;
-transition: all 0.2s ease;
+/* ─── STYLE COMMUN DES CAPSULES (PILLS) ─── */
+#tmux,
+#group-tmux,
+#workspaces,
+#group-workspaces,
+#window,
+#mpris,
+#hardware,
+#group-hardware,
+#control,
+#group-control,
+#power,
+#group-power,
+#clock,
+#tray {
+    background-color: rgba(30, 30, 46, 0.88);
+    border: 1px solid rgba(69, 71, 90, 0.65);
+    border-radius: 99px;
+    padding: 3px 9px;
+    margin: 2px 0;
+    box-shadow: 0 2px 6px rgba(17, 17, 27, 0.35);
+    transition: all 0.2s ease;
 }
 
-#custom-ws1:hover,
-#custom-ws2:hover,
-#custom-ws3:hover,
-#custom-ws4:hover,
-#custom-ws5:hover,
-#custom-ws6:hover,
-#custom-ws7:hover,
-#custom-ws8:hover,
-#custom-ws9:hover,
-#custom-ws10:hover {
-background: #45475a;
-color: #89b4fa;
+/* Masquer la capsule fenêtre quand aucune fenêtre n'est active */
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Mise en évidence du workspace actif depuis le script bash */
-#custom-ws1.active,
-#custom-ws2.active,
-#custom-ws3.active,
-#custom-ws4.active,
-#custom-ws5.active,
-#custom-ws6.active,
-#custom-ws7.active,
-#custom-ws8.active,
-#custom-ws9.active,
-#custom-ws10.active {
-background-color: #89b4fa;
-color: #1e1e2e;
-font-weight: bold;
-}
-
-/* TIROIR TMUX (DRAWER) */
-#group-tmux {
-    background-color: #313244;
-    border-radius: 6px;
-    margin: 4px;
-    padding: 0 4px;
-    transition: all 0.25s ease;
-}
-
-#group-tmux:hover {
-    background-color: #3b3d52;
-}
-
-/* Icône principale Tmux */
+/* ─── 1. CAPSULE TMUX (TIROIR) ─── */
 #custom-tmux {
     color: #89b4fa;
     font-weight: bold;
-    font-size: 15px;
-    padding: 0 12px;
-    margin: 3px 2px;
-    background-color: transparent;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 99px;
     transition: all 0.2s ease;
 }
 
@@ -103,201 +73,307 @@ font-weight: bold;
 #custom-tmux.detached {
     color: #1e1e2e;
     background-color: #fab387;
-    border-radius: 4px;
-    padding: 0 8px;
-    margin: 3px 2px;
+    margin: 2px;
+    padding: 0 10px;
 }
 
-/* Boutons enfants du tiroir - ciblage direct par ID */
 #custom-tmux-new,
 #custom-tmux-attach,
 #custom-tmux-picker,
 #custom-tmux-kill {
-    padding: 0 10px;
-    margin: 3px 4px;
-    border-radius: 6px;
-    background-color: #313244;
-    color: #cdd6f4;
-    font-size: 14px;
-    min-width: 16px;
-    transition: all 0.2s ease;
-}
-
-#group-tmux:hover #custom-tmux-new,
-#group-tmux:hover #custom-tmux-attach,
-#group-tmux:hover #custom-tmux-picker,
-#group-tmux:hover #custom-tmux-kill {
-    background-color: #45475a;
+    padding: 0 8px;
+    margin: 2px 1px;
+    border-radius: 99px;
+    color: #bac2de;
+    transition: all 0.15s ease;
 }
 
 #custom-tmux-new:hover {
-    background-color: #585b70;
+    background-color: rgba(166, 227, 161, 0.18);
     color: #a6e3a1;
 }
 
 #custom-tmux-attach:hover {
-    background-color: #585b70;
+    background-color: rgba(137, 180, 250, 0.18);
     color: #89b4fa;
 }
 
 #custom-tmux-picker:hover {
-    background-color: #585b70;
+    background-color: rgba(203, 166, 247, 0.18);
     color: #cba6f7;
 }
 
 #custom-tmux-kill:hover {
-    background-color: #585b70;
+    background-color: rgba(243, 139, 168, 0.18);
     color: #f38ba8;
 }
 
-/* MODULES STANDARD */
-#window,
-#mpris,
-#pulseaudio,
-#backlight,
-#network,
-#bluetooth,
-#cpu,
-#memory,
-#temperature,
-#battery,
-#power-profiles-daemon,
-#clock,
-#tray {
-padding: 0 12px;
-margin: 4px;
-border-radius: 6px;
-background-color: #313244;
-color: #cdd6f4;
-transition: all 0.2s ease;
+/* ─── 2. CAPSULE WORKSPACES UNIFIÉE ─── */
+#workspaces,
+#group-workspaces {
+    padding: 2px 4px;
 }
 
-/* Effets hover sur les modules interactifs */
-#pulseaudio:hover,
-#backlight:hover,
-#network:hover,
-#bluetooth:hover,
-#cpu:hover,
-#memory:hover,
-#temperature:hover,
-#battery:hover,
-#power-profiles-daemon:hover,
-#clock:hover {
-background-color: #45475a;
+#custom-ws1,
+#custom-ws2,
+#custom-ws3,
+#custom-ws4,
+#custom-ws5,
+#custom-ws6,
+#custom-ws7,
+#custom-ws8,
+#custom-ws9,
+#custom-ws10 {
+    padding: 0 8px;
+    margin: 2px 1px;
+    border-radius: 99px;
+    background-color: transparent;
+    color: #585b70;
+    transition: all 0.2s ease;
 }
 
+/* Bureau non actif mais contenant des fenêtres */
+#custom-ws1.occupied,
+#custom-ws2.occupied,
+#custom-ws3.occupied,
+#custom-ws4.occupied,
+#custom-ws5.occupied,
+#custom-ws6.occupied,
+#custom-ws7.occupied,
+#custom-ws8.occupied,
+#custom-ws9.occupied,
+#custom-ws10.occupied {
+    color: #bac2de;
+}
+
+/* Survol d'un bureau */
+#custom-ws1:hover,
+#custom-ws2:hover,
+#custom-ws3:hover,
+#custom-ws4:hover,
+#custom-ws5:hover,
+#custom-ws6:hover,
+#custom-ws7:hover,
+#custom-ws8:hover,
+#custom-ws9:hover,
+#custom-ws10:hover {
+    background-color: rgba(137, 180, 250, 0.15);
+    color: #cdd6f4;
+}
+
+/* Bureau actif : pilule colorée avec Icône + Numéro */
+#custom-ws1.active,
+#custom-ws2.active,
+#custom-ws3.active,
+#custom-ws4.active,
+#custom-ws5.active,
+#custom-ws6.active,
+#custom-ws7.active,
+#custom-ws8.active,
+#custom-ws9.active,
+#custom-ws10.active {
+    background-color: #89b4fa;
+    color: #11111b;
+    font-weight: bold;
+    padding: 0 12px;
+}
+
+/* ─── 3. FENÊTRE ACTIVE ─── */
+#window {
+    padding: 0 14px;
+    color: #bac2de;
+    font-weight: 500;
+}
+
+/* ─── 4. MÉDIA (MPRIS) ─── */
 #mpris {
-color: #a6e3a1;
+    padding: 0 14px;
+    color: #a6e3a1;
+    border-color: rgba(166, 227, 161, 0.35);
 }
 
 #mpris.paused {
-color: #bac2de;
+    color: #9399b2;
+    border-color: rgba(69, 71, 90, 0.65);
+}
+
+#mpris:hover {
+    background-color: rgba(49, 50, 68, 0.95);
+}
+
+/* ─── 5. TIROIR SYSTÈME (CPU / RAM / TEMP) ─── */
+#cpu,
+#memory,
+#temperature {
+    padding: 0 9px;
+    margin: 2px 1px;
+    border-radius: 99px;
+    background-color: transparent;
+    transition: all 0.2s ease;
 }
 
 #cpu {
-color: #f9e2af;
+    color: #f9e2af;
 }
 
 #memory {
-color: #fab387;
+    color: #fab387;
 }
 
 #temperature {
-color: #eba0ac;
+    color: #eba0ac;
+}
+
+#cpu:hover,
+#memory:hover,
+#temperature:hover {
+    background-color: rgba(69, 71, 90, 0.5);
 }
 
 #temperature.critical {
-color: #1e1e2e;
-background-color: #f38ba8;
-animation-name: blink;
-animation-duration: 0.5s;
-animation-timing-function: linear;
-animation-iteration-count: infinite;
-animation-direction: alternate;
+    color: #11111b;
+    background-color: #f38ba8;
+    font-weight: bold;
+    animation-name: blink;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* ─── 6. CAPSULE CONTRÔLES (AUDIO / LUMIÈRE / RÉSEAU / BT) ─── */
+#pulseaudio,
+#backlight,
+#network,
+#bluetooth {
+    padding: 0 9px;
+    margin: 2px 1px;
+    border-radius: 99px;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#bluetooth:hover {
+    background-color: rgba(69, 71, 90, 0.5);
+}
+
+#pulseaudio {
+    color: #89dceb;
+}
+
+#pulseaudio.muted {
+    color: #f38ba8;
+}
+
+#backlight {
+    color: #f9e2af;
+}
+
+#network {
+    color: #94e2d5;
+    font-size: 16px;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+#bluetooth {
+    color: #89b4fa;
+    font-size: 16px;
+}
+
+#bluetooth.connected {
+    color: #a6e3a1;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: #585b70;
+}
+
+/* ─── 7. CAPSULE ÉNERGIE (BATTERIE + PROFIL) ─── */
+#battery,
+#power-profiles-daemon {
+    padding: 0 9px;
+    margin: 2px 1px;
+    border-radius: 99px;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+#battery:hover,
+#power-profiles-daemon:hover {
+    background-color: rgba(69, 71, 90, 0.5);
 }
 
 #battery {
-color: #a6e3a1;
+    color: #a6e3a1;
 }
 
-#battery.warning {
-color: #f9e2af;
+#battery.charging,
+#battery.plugged {
+    color: #94e2d5;
 }
 
-#battery.critical {
-color: #1e1e2e;
-background-color: #f38ba8;
-animation-name: blink;
-animation-duration: 0.5s;
-animation-timing-function: linear;
-animation-iteration-count: infinite;
-animation-direction: alternate;
+#battery.warning:not(.charging) {
+    color: #f9e2af;
+}
+
+#battery.critical:not(.charging) {
+    color: #11111b;
+    background-color: #f38ba8;
+    font-weight: bold;
+    animation-name: blink;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon.performance {
+    color: #f38ba8;
+}
+
+#power-profiles-daemon.balanced {
+    color: #89b4fa;
+}
+
+#power-profiles-daemon.power-saver {
+    color: #a6e3a1;
+}
+
+/* ─── 8. HORLOGE ─── */
+#clock {
+    padding: 0 14px;
+    color: #cba6f7;
+    font-weight: bold;
+}
+
+#clock:hover {
+    background-color: rgba(49, 50, 68, 0.95);
+    border-color: rgba(203, 166, 247, 0.4);
+}
+
+/* ─── 9. TRAY ─── */
+#tray {
+    padding: 0 12px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
 }
 
 @keyframes blink {
     to {
         background-color: #f38ba8;
-        color: #1e1e2e;
+        color: #11111b;
     }
-}
-
-#battery.charging, #battery.plugged {
-color: #94e2d5;
-}
-
-#backlight {
-color: #f9e2af;
-}
-
-#power-profiles-daemon {
-padding: 0 16px;
-}
-
-#power-profiles-daemon.performance {
-color: #f38ba8;
-}
-
-#power-profiles-daemon.balanced {
-color: #89b4fa;
-}
-
-#power-profiles-daemon.power-saver {
-color: #a6e3a1;
-}
-
-#pulseaudio {
-color: #89dceb;
-}
-
-#pulseaudio.muted {
-color: #f38ba8;
-}
-
-#network {
-color: #89dceb;
-}
-
-#network.disconnected {
-color: #f38ba8;
-}
-
-#bluetooth {
-color: #89b4fa;
-}
-
-#bluetooth.connected {
-color: #a6e3a1;
-}
-
-#bluetooth.disconnected {
-color: #a6adc8;
-}
-
-#clock {
-color: #cba6f7;
-font-weight: bold;
-}
-
-#tray {
-background-color: transparent;
 }
